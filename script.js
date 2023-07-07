@@ -1,19 +1,29 @@
 // Quiz data structure
 const quiz = [
     {
-      question: "What is the capital of France?",
-      options: ["Paris", "London", "Madrid"],
-      answer: "Paris"
+      question: "Commonly used data types DO NOT include:",
+      options: ["Strings", "Booleans", "Alerts", "Numbers"],
+      answer: "Alerts"
     },
     {
-      question: "What is the largest planet in our solar system?",
+      question: "The condition in an if / else statement is enclosed within ____.",
       options: ["Mars", "Saturn", "Jupiter"],
       answer: "Jupiter"
     },
     {
-      question: "Which programming language is often used for web development?",
+      question: "Arrays in JavaScript can be used to store ____.",
       options: ["Java", "JavaScript", "Python"],
       answer: "JavaScript"
+    }
+    {
+        question: "String values must be enclosed within ____ when being assigned to variables.",
+                options: ["commas", "curly brackets", "quotes"],
+                answer: "quotes"
+    }
+    {
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+                options: ["JavaScript", "terminal / bash", "for loops"],
+                answer: "terminal / bash"
     }
   ];
   
@@ -45,7 +55,7 @@ const quiz = [
     optionsContainer.innerHTML = optionsHTML;
   }
   
-  // Function to calculate the score
+  // Function to calculate the score and navigate to the next slide
   function calculateScore() {
     const answers = document.querySelectorAll("input[type='radio']:checked");
   
@@ -79,3 +89,4 @@ const quiz = [
   // Show the first slide when the page loads
   showSlide(currentSlide);
   displayQuestion();
+  
