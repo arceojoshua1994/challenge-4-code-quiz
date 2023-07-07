@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Challenge 4: Code Quiz</title>
+  <title>Challenge 4: Code Quiz</title>
+  <style>
+    .slide {
+      display: none;
+    }
+    .active-slide {
+      display: block;
+    }
+  </style>
+  <style link href=".assets/style.css"></style>
 </head>
-
 <body>
-    <h1>Quiz</h1>
-    <div id="question-container"></div>
-    <button id="submit-btn">Submit</button>
+  <h1>Quiz</h1>
+  <div id="slide-container">
+    <div class="slide active-slide" id="slide-0">
+      <div class="question"></div>
+      <div class="options"></div>
+      <button class="next-btn">Next</button>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
