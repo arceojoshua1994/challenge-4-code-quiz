@@ -2,26 +2,29 @@
 <html>
 <head>
   <title>Challenge 4: Code Quiz</title>
-  <style>
-    .slide {
-      display: none;
-    }
-    .active-slide {
-      display: block;
-    }
-  </style>
-  <!-- <style link href=".assets/style.css"></style> -->
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-  <h1>Quiz</h1>
-  <div id="slide-container">
-    <div class="slide active-slide" id="slide-0">
-      <div class="question"></div>
-      <div class="options"></div>
-      <button class="next-btn">Next</button>
-    </div>
+  <div id="quiz-container" style="display: none;">
+    <h1>Coding Quiz Challenge</h1>
+    <h2 id="timer">Time: 60</h2>
+    <h3 id="question"></h3>
+    <div id="choices"></div>
+    <p id="result"></p>
   </div>
 
-  <script src="script.js"></script>
+  <div id="end-screen" style="display: none;">
+    <h1>Quiz Over</h1>
+    <p id="final-score"></p>
+    <form>
+      <label for="initials">Enter Initials:</label>
+      <input type="text" id="initials" name="initials">
+      <button type="submit">Save</button>
+    </form>
+  </div>
+
+  <button id="start-button">Start Quiz</button>
+
+  <script src="./assets/script/script.js"></script>
 </body>
 </html>

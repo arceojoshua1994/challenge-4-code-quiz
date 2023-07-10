@@ -1,1 +1,27 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 48pt;
+    font-weight: bold;
+}
 
+#timer {
+    display: flex;
+    justify-content: flex-end;
+} 
+
+#quiz-container {
+    display: flex;
+    justify-content: center;
+}
+
+
+button {
+    background-color: purple;
+    color: white;
+}
+
+#choices ol {
+    list-style-type: number;
+    
+} 
