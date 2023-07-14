@@ -107,36 +107,7 @@ function endQuiz() {
     // Step 8: Display the final score
     document.getElementById("final-score").textContent = "Your Final Score is " + timeLeft + ".";
 }
+  
+  // Add event listener to the start button
+  document.getElementById("start-button").addEventListener("click", startQuiz);
 
-// Step 8: Display the list of high scores
-
-function saveHighScore() {
-    const initials = document.getElementById("initials").value;
-  
-    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-    highScores.push({ initials: initials, score: timeLeft });
-  
-    localStorage.setItem("highScores", JSON.stringify(highScores));
-  
-    document.getElementById("end-screen").style.display = "none";
-    document.getElementById("high-scores-list").style.display = "block";
-  
-    displayHighScores();
-  }
-  
-  function displayHighScores() {
-    const highScoresList = document.getElementById("high-scores-list");
-    highScoresList.innerHTML = "";
-  
-    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-  
-    highScores.forEach(function (score) {
-      const li = document.createElement("li");
-      li.textContent = score.initials + " - " + score.score;
-      highScoresList.appendChild(li);
-    });
-  }
-  
-
-// Step 9: Add event listener to the start button
-document.getElementById("start-button").addEventListener("click", startQuiz);

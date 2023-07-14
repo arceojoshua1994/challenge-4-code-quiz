@@ -20,6 +20,12 @@ Welcome to the Code Quiz Challenge! This application allows users to test their 
 5. On the end screen, enter your initials and click "Submit" to save your score.
 6. You can view the list of high scores by clicking on the "View Highscores" link in the header.
 
+This is the link to the application's repository: https://github.com/arceojoshua1994/challenge-4-code-quiz
+
+This is the link to the live application: https://arceojoshua1994.github.io/challenge-4-code-quiz/
+
+![Alt-Text](./assets/images/Screenshot%202023-07-14%20at%208.37.16%20AM.png)
+
 ## Customization
 
 If you want to customize the quiz, you can modify the following files:
