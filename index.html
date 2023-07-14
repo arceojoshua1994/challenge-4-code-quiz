@@ -1,30 +1,47 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Challenge 4: Code Quiz</title>
-  <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Challenge 4: Code Quiz</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
-  <div id="quiz-container" style="display: none;">
-    <h1>Coding Quiz Challenge</h1>
-    <h2 id="timer">Time: 60</h2>
-    <h3 id="question"></h3>
-    <div id="choices"></div>
-    <p id="result"></p>
-  </div>
+    <header>
+        <h3 id="navbar-high-scores"><a href="#high-scores-list">View Highscores</a> </h3>
+        <h3 id="timer">Time: 60</h3>
+    </header>
+    <section id="opening-slide">
+        <h1>Coding Quiz Challenge</h1>
+        <br>
+    </section>
+    <section id="opening-paragraph">
+        <p>Try to answer the following code-related questions within the time <br>
+            limit. Keep in mind that incorrect answers will penalize your score/time <br>
+            by ten seconds!</p>
+    </section>
+    <div id="quiz-container" style="display: none;">
+        <h3 id="question"></h3>
+        <ol id="choices"></ol>
+        <p id="result"></p>
+    </div>
 
-  <div id="end-screen" style="display: none;">
-    <h1>Quiz Over</h1>
-    <p id="final-score"></p>
-    <form>
-      <label for="initials">Enter Initials:</label>
-      <input type="text" id="initials" name="initials">
-      <button type="submit">Save</button>
-    </form>
-  </div>
-
-  <button id="start-button">Start Quiz</button>
-
-  <script src="./assets/script/script.js"></script>
+    <div id="end-screen" style="display: none;">
+        <h1>All done!</h1>
+        <p id="final-score"></p>
+        <form>
+            <label for="initials">Enter Initials:</label>
+            <input type="text" id="initials" name="initials">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div id="high-scores-list" style="display: none">
+    
+    </div>
+    <div>
+        <button id="start-button">Start Quiz</button>
+    </div>
+    <script src="./assets/script/script.js"></script>
 </body>
+
 </html>

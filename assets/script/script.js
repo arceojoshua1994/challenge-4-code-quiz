@@ -2,7 +2,7 @@
 const quizQuestions = [
     {
         question: "Commonly used data types DO NOT include:",
-        choices: ["Strings", "Booleans", "Alerts", "Numbers"],
+        choices: [" 1. Strings", " 2. Booleans", " 3. Alerts", " 4. Numbers"],
         correctAnswer: "Alerts"
     },
     {
@@ -25,22 +25,23 @@ const quizQuestions = [
         choices: ["JavaScript", "terminal / bash", "for loops"],
         correctAnswer: "terminal / bash"
     }
-    // Add more questions here...
 ];
 
-// Define the quiz state variables
+// Step 2: Define the quiz variables
 let currentQuestionIndex = 0;
 let timeLeft = 60;
 let score = 0;
 let timerInterval;
 
-// Function to start the quiz
+// Step 3: Create function to start the quiz
 function startQuiz() {
     // Hide the start button and show the quiz container
     document.getElementById("start-button").style.display = "none";
+    document.getElementById("opening-slide").style.display = "none";
+    document.getElementById("opening-paragraph").style.display = "none";
     document.getElementById("quiz-container").style.display = "block";
 
-    // Start the timer
+    // Step 4: Start the timer
     timerInterval = setInterval(function () {
         timeLeft--;
         document.getElementById("timer").textContent = "Time: " + timeLeft;
@@ -50,11 +51,11 @@ function startQuiz() {
         }
     }, 1000);
 
-    // Display the first question
+    // Step 5A: Display the first question
     showQuestion();
 }
 
-// Function to display a question and its choices
+// Step 5B: Create a function to display a question and its choices
 function showQuestion() {
     const question = quizQuestions[currentQuestionIndex];
     document.getElementById("question").textContent = question.question;
@@ -62,8 +63,6 @@ function showQuestion() {
     const choicesContainer = document.getElementById("choices");
     choicesContainer.innerHTML = "";
 
-    // const choicesList =
-    // document.createElement("ol");
 
     question.choices.forEach(function (choice) {
         const choiceButton = document.createElement("button");
@@ -72,11 +71,11 @@ function showQuestion() {
             checkAnswer(choice);
         });
         choicesContainer.appendChild(choiceButton);
-        
+
     });
 }
 
-// Function to check the answer and proceed to the next question
+// Step 6: Create function to check the answer and proceed to the next question
 function checkAnswer(answer) {
     const question = quizQuestions[currentQuestionIndex];
 
@@ -84,7 +83,7 @@ function checkAnswer(answer) {
         score++;
         document.getElementById("result").textContent = "Correct!";
     } else {
-        timeLeft -= 10; // Subtract 10 seconds for incorrect answers
+        timeLeft -= 10; // Note: Subtract 10 seconds for incorrect answers
         document.getElementById("result").textContent = "Incorrect!";
     }
 
@@ -97,7 +96,7 @@ function checkAnswer(answer) {
     }
 }
 
-// Function to end the quiz
+// Step 7: Create function to end the quiz
 function endQuiz() {
     clearInterval(timerInterval);
 
@@ -105,9 +104,39 @@ function endQuiz() {
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("end-screen").style.display = "block";
 
-    // Display the final score
-    document.getElementById("final-score").textContent = "Final Score: " + score;
+    // Step 8: Display the final score
+    document.getElementById("final-score").textContent = "Your Final Score is " + timeLeft + ".";
 }
 
-// Add event listener to the start button
+// Step 8: Display the list of high scores
+
+function saveHighScore() {
+    const initials = document.getElementById("initials").value;
+  
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials: initials, score: timeLeft });
+  
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  
+    document.getElementById("end-screen").style.display = "none";
+    document.getElementById("high-scores-list").style.display = "block";
+  
+    displayHighScores();
+  }
+  
+  function displayHighScores() {
+    const highScoresList = document.getElementById("high-scores-list");
+    highScoresList.innerHTML = "";
+  
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+  
+    highScores.forEach(function (score) {
+      const li = document.createElement("li");
+      li.textContent = score.initials + " - " + score.score;
+      highScoresList.appendChild(li);
+    });
+  }
+  
+
+// Step 9: Add event listener to the start button
 document.getElementById("start-button").addEventListener("click", startQuiz);

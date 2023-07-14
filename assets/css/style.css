@@ -1,27 +1,90 @@
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+}
+
+header h3 {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+a {
+    color: purple !important;
+}
+
+#opening-slide,
+#opening-paragraph {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#start-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 h1 {
     display: flex;
     justify-content: center;
-    font-size: 48pt;
+    font-size: 28pt;
     font-weight: bold;
 }
 
 #timer {
     display: flex;
-    justify-content: flex-end;
-} 
+    justify-content: end;
+}
 
 #quiz-container {
     display: flex;
+    justify-content: center !important;
+    text-align: center;
+    align-items: center !important;
+}
+
+#choices {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 1pt;
+    border-radius: 1pt;
+}
+
+#end-screen {
+    display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 
 button {
     background-color: purple;
     color: white;
+    border-radius: 1pt;
 }
 
-#choices ol {
-    list-style-type: number;
-    
-} 
+button:hover {
+    background-color: magenta;
+    cursor: pointer;
+}
+
+#start-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
