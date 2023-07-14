@@ -104,9 +104,35 @@ function endQuiz() {
     document.getElementById("quiz-container").style.display = "none";
     document.getElementById("end-screen").style.display = "block";
 
-    // Step 8: Display the final score
+    // Step 8: Save/Display the final score
     document.getElementById("final-score").textContent = "Your Final Score is " + timeLeft + ".";
 }
+
+function saveHighScore() {
+    const initials = document.getElementById("initials").value;
+  
+    const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+    highScores.push({ initials: initials, score: timeLeft });
+  
+    localStorage.setItem("highScores", JSON.stringify(highScores));
+  
+    document.getElementById("end-screen").style.display = "none";
+    document.getElementById("high-scores-list").style.display = "block";
+  
+    displayHighScores();
+  
+    // Step 9: Reset quiz variables and elements
+    currentQuestionIndex = 0;
+    timeLeft = 60;
+    score = 0;
+    document.getElementById("timer").textContent = "Time: " + timeLeft;
+    document.getElementById("result").textContent = "";
+    document.getElementById("initials").value = "";
+  
+    document.getElementById("start-button").style.display = "block";
+    document.getElementById("opening-slide").style.display = "block";
+    document.getElementById("opening-paragraph").style.display = "block";
+  }
   
   // Add event listener to the start button
   document.getElementById("start-button").addEventListener("click", startQuiz);
