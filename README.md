@@ -40,7 +40,7 @@ You can adjust the quiz questions, modify the timer duration, or change the appe
 
 This application was developed by Joshua Arceo. It utilizes HTML, CSS, and JavaScript.
 
-The code for this application is based on a challenge provided by [Source/Inspiration], with modifications made to fit the requirements.
+The code for this application is based on a challenge provided by University of Miami, with modifications made to fit the requirements.
 
 ## License
 
