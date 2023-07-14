@@ -38,8 +38,10 @@ You can adjust the quiz questions, modify the timer duration, or change the appe
 
 ## Credits
 
-This application was developed by [Your Name]. It utilizes HTML, CSS, and JavaScript.
+This application was developed by Joshua Arceo. It utilizes HTML, CSS, and JavaScript.
 
 The code for this application is based on a challenge provided by [Source/Inspiration], with modifications made to fit the requirements.
 
 ## License
+
+MIT license: [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
